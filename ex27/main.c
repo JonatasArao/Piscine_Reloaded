@@ -6,7 +6,7 @@
 /*   By: jarao-de <jarao-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:12:20 by jarao-de          #+#    #+#             */
-/*   Updated: 2024/10/08 15:49:57 by jarao-de         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:03:42 by jarao-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	invalid_arguments_count(int argc)
 	if (argc == 2)
 		return (0);
 	if (argc == 1)
-		write(1, "File name missing.\n", 20);
+		write(2, "File name missing.\n", 20);
 	if (argc > 2)
-		write(1, "Too many arguments.\n", 21);
+		write(2, "Too many arguments.\n", 21);
 	return (1);
 }
 
