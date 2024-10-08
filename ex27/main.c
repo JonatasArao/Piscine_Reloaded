@@ -6,7 +6,7 @@
 /*   By: jarao-de <jarao-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:12:20 by jarao-de          #+#    #+#             */
-/*   Updated: 2024/10/08 16:03:42 by jarao-de         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:10:44 by jarao-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ void	ft_display_file(char *filename)
 	char	buffer[8192];
 
 	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+	{
+		write(2, "Cannot open file.\n", 18);
+		return ;
+	}
 	bytes_readed = read(fd, buffer, 8192);
 	while (bytes_readed > 0)
 	{
